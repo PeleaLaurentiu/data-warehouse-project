@@ -5,7 +5,7 @@ import statistics
 
 main = FastAPI(title="Data Warehouse API", description="API created by Pelea Laurentiu for Data Warehouse final project")
 
-CONNECTION_string = "mongodb+srv://laurentiupelea03:LaurentiuP2003mgdb@cluster0.6wazjjo.mongodb.net/?appName=Cluster0"
+CONNECTION_string = "mongodb+srv://laurentiupelea03:(password)@cluster0.6wazjjo.mongodb.net/?appName=Cluster0"
 client = pymongo.MongoClient(CONNECTION_string)
 db = client["DWproject"]
 
