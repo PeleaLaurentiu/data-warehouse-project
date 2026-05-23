@@ -2,7 +2,7 @@ from google import genai
 from google.genai import types
 import requests
 
-API_Key = "AIzaSyAnhTseZejw2GjrFOhXvF8x4UHIlx9Buqc"
+API_Key = ""
 client = genai.Client(api_key=API_Key)
 
 base_url = "http://localhost:8000"
