@@ -2,11 +2,11 @@ import pymongo
 import requests
 from datetime import datetime
 
-CONNECTION_string = "mongodb+srv://laurentiupelea03:LaurentiuP2003mgdb@cluster0.6wazjjo.mongodb.net/?appName=Cluster0"
+CONNECTION_string = "mongodb+srv://laurentiupelea03:(PASSWORD)@cluster0.6wazjjo.mongodb.net/?appName=Cluster0"
 client = pymongo.MongoClient(CONNECTION_string)
 db = client["DWproject"]
 
-API_Key = "Q4LLIPRS4XS2Z2N8"
+API_Key = ""
 
 #VENDOR
 vendor_av = db["Vendors"].find_one({"vendor_name": "Alpha Vantage"})
