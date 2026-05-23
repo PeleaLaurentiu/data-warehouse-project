@@ -1,7 +1,7 @@
 import pymongo
 from datetime import datetime
 
-CONNECTION_string = "mongodb+srv://laurentiupelea03:LaurentiuP2003mgdb@cluster0.6wazjjo.mongodb.net/?appName=Cluster0"
+CONNECTION_string = "mongodb+srv://laurentiupelea03:(PASSWORD)@cluster0.6wazjjo.mongodb.net/?appName=Cluster0"
 client = pymongo.MongoClient(CONNECTION_string)
 db = client["DWproject"]
 
