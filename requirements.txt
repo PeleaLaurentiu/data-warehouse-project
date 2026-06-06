@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+pymongo
+requests
+streamlit
+google-genai
+mcp
+pyspark
+pandas
+pytest
+httpx
