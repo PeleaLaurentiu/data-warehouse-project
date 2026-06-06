@@ -9,6 +9,9 @@ Final project for the Data Warehouse course. This project is a data platform bui
 * **Data Analytics**: Apache Spark integration for computing statistics (min/max/mean) and basic price forecasting.
 * **Agentic AI**: A Streamlit chat interface powered by Google Gemini, using tool calling (via MCP) to fetch data directly from the API based on user prompts.
 
+## Scalability & Partitioning Strategy
+The MongoDB `TimeSeriesData` collection is designed to efficiently handle time-series data. Current scalability is achieved through sorting and pagination in the Data Access Layer. Furthermore, the architecture is compatible with grouping daily price points into a single document per asset. Combined with indexing on the `validTo` and `timestamp` fields, this architectural choice ensures the system can scale to handle millions of records while maintaining optimal read performance for the Apache Spark analytics layer.
+
 ## Tech Stack
 * **Backend:** Python, FastAPI, Uvicorn
 * **Database:** MongoDB
