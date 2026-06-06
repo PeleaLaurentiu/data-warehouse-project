@@ -1,14 +1,36 @@
-Financial Data Warehouse & AI Helper
+# Financial Data Warehouse poject - Pelea Laurentiu
 
-This project is an end-to-end system that extracts financial data, stores it in a NoSQL database, and exposes it through an API and an AI powered chat interface (gui.py) or in the Visual Code terminal (Basic_AI.py).
+Final project for the Data Warehouse course. This project is a data platform built for a fictional company (Acme Ltd) to ingest, store, and analyze financial market data (stocks and crypto). It includes a backend REST API and an LLM assistant that can answer questions based on the stored data.
 
-Project Overview
+## Features
+* **ETL Pipeline**: Fetches real-time and historical data from Alpha Vantage and CoinGecko.
+* **Temporal Database**: Uses MongoDB to store data without overwriting, maintaining `validFrom` and `active` states to track data provenance.
+* **REST API**: Built with FastAPI to serve data and handle analytics requests.
+* **Data Analytics**: Apache Spark integration for computing statistics (min/max/mean) and basic price forecasting.
+* **Agentic AI**: A Streamlit chat interface powered by Google Gemini, using tool calling (via MCP) to fetch data directly from the API based on user prompts.
 
-Data ingestion & storage (data_ingestion.py): I wrote a Python script that pulls historical data for Microsoft (Alpha Vantage API) and Bitcoin (CoinGecko API). The data is stored in MongoDB.
+## Tech Stack
+* **Backend:** Python, FastAPI, Uvicorn
+* **Database:** MongoDB
+* **Analytics:** Apache Spark
+* **Frontend/UI:** Streamlit
+* **AI/LLM:** Google Gemini API
 
-Backend API (api.py): Built with FastAPI. It handles basic queries for assets, vendors, and time-series data. I also added endpoints for analytics that calculate things like min, max, average prices and basic short term trends.
+## Prerequisites
+In order to run the project, the user has to have installed the following:
+* Python 3.9+
+* A running MongoDB instance
+* API keys for Google Gemini and Alpha Vantage
 
-AI Assistant: I built a simple web UI using Streamlit and Google's Gemini model. The LLM is integrated via tool calling. When you ask the bot a question, it doesn't just guess the answer; it actively calls the FastAPI endpoints, reads the JSON from database, and formulates an answer based strictly on that data.
+## Installation
 
-Tech Stack
-Python, MongoDB, FastAPI, Streamlit, Google GenAI.
+1. Get the repository
+2. pip install -r requirements.txt
+3. Make sure to place all the API keys where are needed
+
+## How to run
+
+1. Data Ingestion (ETL) (dbSetup.py and data_ingestion.py)
+2. uvicorn api:main --reload (http://localhost:8000/docs)
+3. run mcp_server.py
+4. streamlit run gui.py in order to open de AI agent interface
